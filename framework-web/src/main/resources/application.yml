@@ -1,0 +1,59 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    #driver-class-name: oracle.jdbc.driver.OracleDriver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://1.15.123.16:3306/test?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password: 123456
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: false
+  thymeleaf:
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+      # 开发时关闭缓存，页面实时刷新
+    cache: false
+
+#spring:
+#  datasource:
+#    #driver-class-name: oracle.jdbc.driver.OracleDriver
+#    driver-class-name: oracle.jdbc.OracleDriver
+#    url: jdbc:oracle:thin:@10.142.141.45:1521:uatogg1
+#    username: e_mid_user
+#    password: Aa123456
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8
+#    serialization:
+#      write-dates-as-timestamps: false
+#  thymeleaf:
+#    mode: HTML
+#    encoding: UTF-8
+#    servlet:
+#      content-type: text/html
+#      # 开发时关闭缓存，页面实时刷新
+#    cache: false
+
+mybatis-plus:
+  configuration:
+    #map-underscore-to-camel-case: true
+    map-underscore-to-camel-case: false
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 1
+      # 删除后
+      logic-delete-value: 0
