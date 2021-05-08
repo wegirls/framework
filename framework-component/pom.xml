@@ -9,7 +9,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <groupId>com.wegirl</groupId>
-    <artifactId>framework-service</artifactId>
+    <artifactId>framework-component</artifactId>
     <version>${project.parent.version}</version>
 
     <dependencies>
@@ -19,5 +19,14 @@
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

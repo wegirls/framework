@@ -27,6 +27,7 @@
     <module>framework-web</module>
     <module>framework-service</module>
     <module>framework-dao</module>
+    <module>framework-component</module>
   </modules>
 
   <dependencies>

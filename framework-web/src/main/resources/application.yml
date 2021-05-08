@@ -7,7 +7,8 @@ spring:
   datasource:
     #driver-class-name: oracle.jdbc.driver.OracleDriver
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://1.15.123.16:3306/test?useUnicode=true&useSSL=false&characterEncoding=utf8
+    #url: jdbc:mysql://1.15.123.16:3306/test?useUnicode=true&useSSL=false&characterEncoding=utf8
+    url: jdbc:mysql://121.5.112.73:3306/test?useUnicode=true&useSSL=false&characterEncoding=utf8
     username: root
     password: 123456
   jackson:
