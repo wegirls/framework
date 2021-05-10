@@ -1,15 +1,14 @@
 package com.wegirl.framework.web.controller;
 
-
-import com.wegirl.framework.dao.entity.User;
 import com.wegirl.framework.share.request.UserRequest;
 import com.wegirl.framework.share.response.UserResponse;
 import com.wegirl.framework.share.service.IUserShaeService;
 import com.wegirl.framework.web.service.impl.UserServiceImpl;
 import io.swagger.annotations.Api;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -30,18 +29,19 @@ public class UserController implements IUserShaeService {
     private UserServiceImpl userServiceImpl;
 
     @Override
-    public UserResponse queryUser(Long id) {
+    public UserResponse queryUserById(Long id) {
         return userServiceImpl.queryUserById(id);
-    }
-
-    @Override
-    public UserResponse queryUser(UserRequest userRequest) {
-        return userServiceImpl.queryUser(userRequest);
     }
 
     @Override
     public List<UserResponse> queryAllUser() {
         return userServiceImpl.queryAllUser();
     }
+
+    @Override
+    public UserResponse queryUser(UserRequest userRequest) {// @RequestBody @Validated
+        return userServiceImpl.queryUser(userRequest);
+    }
+
 }
 

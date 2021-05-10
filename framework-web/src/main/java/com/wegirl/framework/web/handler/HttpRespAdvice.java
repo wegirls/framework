@@ -32,14 +32,14 @@ public class HttpRespAdvice implements ResponseBodyAdvice<Object> {
     @Override
     public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
         //TODO 通过 messagesource 实现国际化
-        /*if( body instanceof ResponseData){
+        //if( body instanceof ResponseData){
             try{
-                log.info("response data:{}",objectMapper.writeValueAsString(body));
+                log.info("response data | {}",objectMapper.writeValueAsString(body));
             }catch(JsonProcessingException e){
                 // never occur
                 log.warn("response data json process fail",e);
             }
-        }*/
+        //}
         return body;
     }
 }

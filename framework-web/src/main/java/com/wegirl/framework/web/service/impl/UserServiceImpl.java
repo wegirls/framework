@@ -1,20 +1,14 @@
 package com.wegirl.framework.web.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.toolkit.Assert;
-import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.wegirl.framework.component.service.impl.UserComponentServiceImpl;
 import com.wegirl.framework.dao.entity.User;
-import com.wegirl.framework.dao.mapper.UserMapper;
 import com.wegirl.framework.share.request.UserRequest;
 import com.wegirl.framework.share.response.UserResponse;
 import com.wegirl.framework.web.service.IUserService;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -30,36 +24,21 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public UserResponse queryUserById(Long id) {
-        final UserResponse userResponse = new UserResponse();
-        User user = userComponentServiceImpl.getById(id);
-        if (user != null) {
-            userResponse.setId(user.getId());
-            userResponse.setName(user.getName());
-            userResponse.setAge(user.getAge());
-            userResponse.setEmail(user.getEmail());
+        Optional<User> optional = Optional.ofNullable(userComponentServiceImpl.getById(id));
+        if (!optional.isPresent()) {
+            return new UserResponse();
         }
-        return userResponse;
-    }
-
-    @Override
-    public UserResponse queryUser(UserRequest userRequest) {
-        final UserResponse userResponse = new UserResponse();
-        LambdaQueryWrapper<User> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-        lambdaQueryWrapper.eq(User::getName,userRequest.getName());
-        final User user = userComponentServiceImpl.getOne(lambdaQueryWrapper);
-        if (user != null) {
-            userResponse.setId(user.getId());
-            userResponse.setName(user.getName());
-            userResponse.setAge(user.getAge());
-            userResponse.setEmail(user.getEmail());
-        }
+        UserResponse userResponse = new UserResponse();
+        userResponse.setId(optional.get().getId());
+        userResponse.setName(optional.get().getName());
+        userResponse.setAge(optional.get().getAge());
+        userResponse.setEmail(optional.get().getEmail());
         return userResponse;
     }
 
     @Override
     public List<UserResponse> queryAllUser() {
         final List<User> userList = userComponentServiceImpl.list();
-        //userList.stream().filter().collect(Collectors.toList());
         final Stream<UserResponse> userResponseStream = userList.stream().map(user -> {
             final UserResponse userResponse = new UserResponse();
             userResponse.setId(user.getId());
@@ -69,5 +48,19 @@ public class UserServiceImpl implements IUserService {
             return userResponse;
         });
         return userResponseStream.collect(Collectors.toList());
+    }
+
+    @Override
+    public UserResponse queryUser(UserRequest userRequest) {
+        User user = userComponentServiceImpl.selectOne(userRequest);
+        if (user == null) {
+            return new UserResponse();
+        }
+        UserResponse userResponse = new UserResponse();
+        userResponse.setId(user.getId());
+        userResponse.setName(user.getName());
+        userResponse.setAge(user.getAge());
+        userResponse.setEmail(user.getEmail());
+        return userResponse;
     }
 }

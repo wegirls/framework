@@ -19,15 +19,15 @@ public interface IUserService {
     UserResponse queryUserById(Long id);
 
     /**
-     * 查用户
-     * @param userRequest
-     * @return
-     */
-    UserResponse queryUser(UserRequest userRequest);
-
-    /**
      * 查所有用户
      * @return
      */
     List<UserResponse> queryAllUser();
+
+    /**
+     * 查询用户通过任意参数
+     * @param userRequest
+     * @return
+     */
+    UserResponse queryUser(UserRequest userRequest);
 }

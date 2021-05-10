@@ -2,6 +2,7 @@ package com.wegirl.framework.component.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.wegirl.framework.dao.entity.User;
+import com.wegirl.framework.share.request.UserRequest;
 
 /**
  * <p>
@@ -13,4 +14,10 @@ import com.wegirl.framework.dao.entity.User;
  */
 public interface IUserComponentService extends IService<User> {
 
+    /**
+     * selectOne
+     * @param userRequest
+     * @return
+     */
+    User selectOne(UserRequest userRequest);
 }
