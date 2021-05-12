@@ -1,8 +1,8 @@
 package com.wegirl.framework.web.handler;
 
-import com.wegirl.framework.web.common.CommonMessageCode;
-import com.wegirl.framework.web.common.ResponseData;
-import com.wegirl.framework.web.exception.BusinessException;
+import com.wegirl.framework.common.CommonMessageCode;
+import com.wegirl.framework.common.ResponseData;
+import com.wegirl.framework.common.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindException;

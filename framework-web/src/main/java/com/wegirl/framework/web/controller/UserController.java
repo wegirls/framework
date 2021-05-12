@@ -1,10 +1,10 @@
 package com.wegirl.framework.web.controller;
 
+import com.wegirl.framework.common.ResponseData;
 import com.wegirl.framework.share.request.UserRequest;
 import com.wegirl.framework.share.response.UserResponse;
-import com.wegirl.framework.share.service.IUserShaeService;
+import com.wegirl.framework.share.service.IUserShareController;
 import com.wegirl.framework.web.service.impl.UserServiceImpl;
-import io.swagger.annotations.Api;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,26 +20,25 @@ import java.util.List;
  * @author rui.zhou
  * @since 2021-05-07
  */
-@Api(tags = "用户管理相关接口")
 @RestController
 @RequestMapping("/framework/user")
-public class UserController implements IUserShaeService {
+public class UserController implements IUserShareController {
 
     @Resource
     private UserServiceImpl userServiceImpl;
 
     @Override
-    public UserResponse queryUserById(Long id) {
+    public ResponseData<UserResponse> queryUserById(Long id) {
         return userServiceImpl.queryUserById(id);
     }
 
     @Override
-    public List<UserResponse> queryAllUser() {
+    public ResponseData<List<UserResponse>> queryAllUser() {
         return userServiceImpl.queryAllUser();
     }
 
     @Override
-    public UserResponse queryUser(UserRequest userRequest) {// @RequestBody @Validated
+    public ResponseData<UserResponse> queryUser(@RequestBody @Validated UserRequest userRequest) {
         return userServiceImpl.queryUser(userRequest);
     }
 

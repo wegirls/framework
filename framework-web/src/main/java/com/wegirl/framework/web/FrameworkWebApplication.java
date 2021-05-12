@@ -10,7 +10,6 @@ import org.springframework.context.annotation.ComponentScan;
  * @date 2021/05/06 15:46
  **/
 @ComponentScan(basePackages = {"com.wegirl.framework"})
-// com.baomidou.mybatisplus.samples.quickstart.mapper
 @MapperScan("com.wegirl.framework.dao.mapper")
 @SpringBootApplication
 public class FrameworkWebApplication {

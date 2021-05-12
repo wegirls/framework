@@ -1,4 +1,4 @@
-package com.wegirl.framework.web.common;
+package com.wegirl.framework.common;
 
 /**
  * @author rui.zhou

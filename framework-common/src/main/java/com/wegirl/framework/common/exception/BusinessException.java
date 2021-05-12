@@ -1,6 +1,6 @@
-package com.wegirl.framework.web.exception;
+package com.wegirl.framework.common.exception;
 
-import com.wegirl.framework.web.common.MessageCode;
+import com.wegirl.framework.common.MessageCode;
 
 /**
  * 业务异常

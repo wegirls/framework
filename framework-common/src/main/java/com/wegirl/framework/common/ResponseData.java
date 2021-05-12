@@ -1,4 +1,4 @@
-package com.wegirl.framework.web.common;
+package com.wegirl.framework.common;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.extern.slf4j.Slf4j;

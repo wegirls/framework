@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wegirl.framework.dao.mapper.IbssRegistorMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wegirl.framework.dao.entity.IbssRegistor">
+        <result column="CUSTOMERNO" property="customerno" />
+        <result column="CONTNO" property="contno" />
+        <result column="ROLE" property="role" />
+        <result column="NAME" property="name" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="OBSOLETE_FLAG" property="obsoleteFlag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        CUSTOMERNO, CONTNO, ROLE, NAME, CREATE_TIME, OBSOLETE_FLAG
+    </sql>
+
+</mapper>

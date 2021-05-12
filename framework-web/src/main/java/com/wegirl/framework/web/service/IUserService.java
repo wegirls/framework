@@ -1,5 +1,6 @@
 package com.wegirl.framework.web.service;
 
+import com.wegirl.framework.common.ResponseData;
 import com.wegirl.framework.dao.entity.User;
 import com.wegirl.framework.share.request.UserRequest;
 import com.wegirl.framework.share.response.UserResponse;
@@ -16,18 +17,18 @@ public interface IUserService {
      * @param id
      * @return
      */
-    UserResponse queryUserById(Long id);
+    ResponseData<UserResponse> queryUserById(Long id);
 
     /**
      * 查所有用户
      * @return
      */
-    List<UserResponse> queryAllUser();
+    ResponseData<List<UserResponse>> queryAllUser();
 
     /**
      * 查询用户通过任意参数
      * @param userRequest
      * @return
      */
-    UserResponse queryUser(UserRequest userRequest);
+    ResponseData<UserResponse> queryUser(UserRequest userRequest);
 }

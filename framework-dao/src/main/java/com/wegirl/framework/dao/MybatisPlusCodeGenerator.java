@@ -20,19 +20,19 @@ public class MybatisPlusCodeGenerator {
 
     // ================= 自定义配置  =================
 
-    private static final DbType DB_TYPE = DbType.MYSQL;
+    /*private static final DbType DB_TYPE = DbType.MYSQL;
     private static final String JDBC_URL = "jdbc:mysql://121.5.112.73:3306/test?useUnicode=true&useSSL=false&characterEncoding=utf8";
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String SCHEMA_NAME = "";
     private static final String JDBC_USERNAME = "root";
-    private static final String JDBC_PASSWORD = "123456";
+    private static final String JDBC_PASSWORD = "123456";*/
 
-    /*private static final DbType DB_TYPE = DbType.ORACLE;
+    private static final DbType DB_TYPE = DbType.ORACLE;
     private static final String JDBC_URL = "jdbc:oracle:thin:@10.142.141.45:1521:uatogg1";
     private static final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static final String SCHEMA_NAME = "E_MID_USER";
     private static final String JDBC_USERNAME = "e_mid_user";
-    private static final String JDBC_PASSWORD = "Aa123456";*/
+    private static final String JDBC_PASSWORD = "Aa123456";
     /**
      * 生成文件根目录及包名
      */
