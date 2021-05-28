@@ -6,18 +6,15 @@
     ibss-rule-core
   </h1>
   <h4 align="center">
-    中间平台规则引擎
+    XXXXX
   </h4> 
 
-[预 览](http://localhost:8080/swagger-ui.html)   |   [官 网](http://www.XXX.com/)   |  [文档](http://10.142.146.37:8081/rule-engine/ibss-rule-core/tree/master/rule-web/README.md)
+[预 览](http://localhost:8080/swagger-ui.html)   |   [官 网](http://www.XXX.com/)   |  [文档](http://XXXX/README.md)
 
 
 </div>
 
 <p align="center">
-    <a href="#">
-        <img src="https://img.shields.io/badge/ibss--rule--core-1.0.0-green" alt="Pear Admin Layui Version">
-    </a>
     <a href="#">
         <img src="https://img.shields.io/badge/spring--boot-2.4.5-green" alt="Jquery Version">
     </a>
@@ -39,16 +36,16 @@
 
 <p style="padding:10px;"  width="90%">
 
-基于springboot+mybatis-plus+drools开发的一套规则引擎技术,前提是已经有部署好的可用的kie-service服务
+基于springboot+mybatis-plus+drools
 
 </p>
 
 #### 项目结构
 
 ```
-ibss-rule-core
+framework
 │
-├─rule-common 公共资源
+├─framework-common 公共资源
 │	│
 │	├─collections 集合相关工具类
 │	│
@@ -62,11 +59,11 @@ ibss-rule-core
 │	│
 │	└─utils 工具类
 │
-├─rule-component service组件层(主要负责与dao交互)
+├─framework-component service组件层(主要负责与dao交互)
 │	│
 │	└─service 封装与dao交互的service
 │
-├─rule-core 核心层
+├─framework-core 核心层
 │	│
 │	├─controller 主业务controller
 │	│
@@ -80,13 +77,13 @@ ibss-rule-core
 │	│
 │	└─resource 配置文件、xml文件、drl文件等
 │
-├─rule-dao 与数据库交互层
+├─framework-dao 与数据库交互层
 │	│
 │	├─common XXXDao.java
 │	│
 │	└─mapper XXXMapper.java
 │
-├─rule-web 全局入口层(对外接口定义)
+├─framework-web 全局入口层(对外接口定义)
 │	│
 │	├─controller controller接口
 │	│
