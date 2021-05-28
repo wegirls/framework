@@ -3,7 +3,7 @@
 <br/>
 <img src="https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png" width="90px" style="margin-top:30px;"/>
   <h1 align="center">
-    ibss-rule-core
+    framework
   </h1>
   <h4 align="center">
     XXXXX
